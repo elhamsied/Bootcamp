@@ -1,35 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Personal Profile Page</title>
+    <title>Personal Profile</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        h1, h2, p {
+            text-align: center;
+        }
+
+        img {
+            display: block;
+            margin: auto;
+            border-radius: 50%;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body>
 
-    <h1 align ="center">Elham Seid Ahmed</h1>
-    
-    <center>
-         <img src="profile.jpg" alt="My Profile Picture" width="150">
-    </center>
+<div class="container">
 
-    <p align ="center">
-        Hello! My name is Elham. I am a Software Engineering student with an interest in web development
-        and learning new technologies.<br> I enjoy building simple projects and improving my skills step by step.
+    <h1>Elham Seid Ahmed</h1>
+
+    <img src="profile.jpg" alt="Profile Picture" width="150">
+
+    <p>
+        Hello! My name is Elham. I am a Software Engineering student
+        interested in web development and learning new technologies.
     </p>
-    
-    <h2 align ="center">Contact Me</h2>
 
-    <form align ="center">
-        <label>Name:</label><br>
-        <input type="text" name="name"><br><br>
+    <h2>Contact Me</h2>
 
-        <label>Email:</label><br>
-        <input type="email" name="email"><br><br>
+    <form onsubmit="showMessage(); return false;">
+        <label>Name:</label>
+        <input type="text" required>
 
-        <label>Message:</label><br>
-        <textarea name="message"></textarea><br><br>
+        <label>Email:</label>
+        <input type="email" required>
 
-        <input type="submit" value="Send">
+        <label>Message:</label>
+        <textarea required></textarea>
+
+        <button type="submit">Send</button>
     </form>
+
+</div>
+
+<script>
+    function showMessage() {
+        alert("Thank you! Your message has been sent.");
+        document.querySelector("form").reset();
+    }
+</script>
+
 
 </body>
 </html>
