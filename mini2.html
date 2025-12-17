@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Profile</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #0b1220;
+  color: #e6e6e6;
+}
+
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      display: block;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    header {
+      background: linear-gradient(rgba(11,18,32,0.85), rgba(11,18,32,0.85)),
+                  url('https://images.unsplash.com/photo-1518770660439-4636190af475');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    header span {
+      display: inline-block; 
+      margin-top: 10px;
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: #a8c7ff;
+    }
+
+    .profile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .profile img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .profile p {
+      max-width: 500px;
+      font-size: 1rem;
+      text-align: left;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .skill {
+  background-color: #141f3a;
+  padding: 25px;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: 400;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.skill:hover {
+  background-color: #1f3cff;
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      display: block;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    form button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #1f3cff;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #050a16;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .profile {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .profile p {
+        text-align: center;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Elham Seid Ahmed</h1>
+    <span>Software Engineering Student</span>
+  </header>
+
+  <section>
+    <h2>Profile</h2>
+    <div class="profile">
+    <img src="profile.jpg" alt="Profile Image" />
+      <p>
+        I am a second-year Software Engineering student with a strong interest in web
+        development and problem solving. I enjoy learning how systems work and
+        building clean, simple, and responsive user interfaces using HTML and CSS.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">Python</div>
+      <div class="skill">C++</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact Me</h2>
+    <form id="contactForm" onsubmit="clearForm(event)">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Your Name" />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Your Email" />
+
+      <label for="message">Message</label>
+      <textarea id="message" rows="5" placeholder="Your Message"></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="successMessage" style="display:none; text-align:center; margin-top:15px; color:#7cff9a;">
+  Message sent successfully!
+</p>
+
+  </section>
+
+  <footer>
+    <p>© 2025 Elham Seid Ahmed. All Rights Reserved.</p>
+  </footer>
+ <script>
+  function clearForm(event) {
+    event.preventDefault();
+
+    document.getElementById("contactForm").reset();
+
+    document.getElementById("successMessage").style.display = "block";
+  }
+ </script>
+
+
+
+</body>
+</html>
